@@ -1,0 +1,77 @@
+* {
+    background-color:rgb(68, 79, 238);
+}
+
+header {
+    display:flex;
+    justify-content: center;
+    font-family: cursive;
+    font-size: 40px;
+    color: white;
+    padding-bottom:100px;
+}
+
+aside {
+    display:flex;
+    padding-left: 25px;
+}
+
+h1 {
+    color: white;
+    font-size: 25px;
+    font-family: cursive;
+}
+
+form {
+    text-align: center;
+}
+
+
+.formPad {
+    margin: 5px;
+}
+
+#search {
+    border-radius: 5px;
+    color: rgb(235,194,11);
+}
+
+#button {
+    color:white;
+    border-radius: 5px;
+}
+
+::placeholder {
+    color:rgb(235, 194, 11);
+}
+
+#button:hover {
+    background-color:rgb(68, 79, 238);
+    transform:scale(1.03);
+}
+
+.mainWeather {
+    display:flex;
+    justify-content: center;
+    vertical-align: auto;
+    
+}
+
+#City {
+    color:white;
+}
+
+#Temp {
+    color:white;
+}
+
+#Wind {
+    color:white;
+}
+
+#Humid {
+    color:white;
+}
+
+
+
