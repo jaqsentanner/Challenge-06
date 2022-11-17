@@ -12,6 +12,7 @@
 <body>
     <header>🌞Weather Dashboard🌧️</header>
 
+<div class="bodyCenter">
     <aside>
         <form>
             <h1>Search for a City🔎</h1>
@@ -23,15 +24,27 @@
     </aside>
 
     <main class="mainWeather">
-        <div>
+        <div class="boxStyle" style="width: 72rem;">
             <h2 id="City"></h2>
             <p id="Temp">Temp:</p>
             <p id="Wind">Wind:</p>
             <p id="Humid">Humidity:</p>
         </div>
+        <div class="fiveDay">
+            <h2>5-Day Forecast:</h2>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </main>
+</div>
 
-    <section></section>
+<section class="dropBox">
+    
+</section>
+
 
 
     <script src="./assets/weather.js"></script>
