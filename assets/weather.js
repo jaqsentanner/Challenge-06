@@ -2,23 +2,28 @@ var cityBox = document.getElementById('City');
 var tempBox = document.getElementById('Temp');
 var windBox = document.getElementById('Wind');
 var humidBox = document.getElementById('Humid');
-
+// var city = document.getElementById('search').value;
+var form = document.getElementById('button');
 
 let apiKey = '8eba77eeb7411a74f0653e3bdb8761e7';
-let baseAPI = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=';
+
+
+// let geoApi = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=2&appid=';
+// var geoURL = geoApi + apiKey;
 
 var currentWeather = 'https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=';
 var fiveDayWeather;
 
-var city = document.getElementById('search').value;
-var form = document.getElementById('button')
-
-function cW() {
+ function cW() {
 
     var city = document.getElementById('search').value;
-    var currentURL = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey;
+    let geoApi = 'http://api.openweathermap.org/geo/1.0/direct?q=' + city + '&limit=2&appid=';
+    var geoURL = geoApi + apiKey;
+    var lon = [];
+    var lat = [];
+
     
-    fetch(currentURL)
+    fetch(geoURL)
 
     .then (function(response) {
         return response.json();
@@ -26,18 +31,44 @@ function cW() {
 
     .then (function(data){
         console.log(data);
-        cityBox.textContent = data.name;
-        tempBox.textContent = 'Temperature: ' + data.main.temp;
-        windBox.textContent = 'Wind Speed: ' + data.wind.speed;
-        humidBox.textContent = 'Humidity: ' + data.main.humidity;
-        cityBox.append = (cityBox);
-        tempBox.append = (tempBox);
-        windBox.append = (windBox);
-        humidBox.append = (humidBox);
-    });
-}
+        lon = data[0].lon;
+        lat = data[0].lat;
+        let baseAPI = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&units=imperial' + '&appid=' + apiKey;
+        fetch(baseAPI)
+
+        .then (function(response2){
+            return response2.json();
+        })
+
+        .then (function(data2){
+            console.log(data2);
+            cityBox.textContent = data2.city.name;
+            tempBox.textContent = 'Temperature: ' + data2.list[0].main.temp + '°';
+            windBox.textContent = 'Wind Speed: ' + data2.list[0].wind.speed + 'MPH';
+            humidBox.textContent = 'Humidity: ' + data2.list[0].main.humidity;
+            cityBox.append = (cityBox);
+            tempBox.append = (tempBox);
+            windBox.append = (windBox);
+            humidBox.append = (humidBox);
+        })
+        
+    })}; 
 
 form.addEventListener('click', cW);
+
+// function geoCode() {
+//     fetch(geoURL)
+
+//     .then(function(feedback) {
+//         return feedback.json();
+//     })
+
+//     .then (function(data2){ 
+//         console.log(data2);
+//     })
+// }
+
+// geoCode();
 
 
 
