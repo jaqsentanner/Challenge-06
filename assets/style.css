@@ -88,13 +88,17 @@ form {
     margin-top: 20px;
 }
 
-.fiveDay {
+#fiveDay {
     display:flex;
     vertical-align: top;
     padding: 100px;
     border: 3px solid black;
     width:100%;
     vertical-align: top;
+}
+
+#fiveDay:hover {
+    transform:scale(1.03);
 }
 
 .tile {
@@ -104,5 +108,48 @@ form {
     margin: 5px;
 }
 
+#dayTwo, #dayThree, #dayFour, #dayFive, #daySix {
+    padding:3px;
+    color:white;
+    text-align:left;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
 
+#temp2, #wind2, #humid2 {
+    padding:3px;
+    color:white;
+    text-align:left;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
 
+#temp3, #wind3, #humid3 {
+    padding:3px;
+    color:white;
+    text-align:left;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#temp4, #wind4, #humid4 {
+    padding:3px;
+    color:white;
+    text-align:left;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#temp5, #wind5, #humid5 {
+    padding:3px;
+    color:white;
+    text-align:left;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#temp6, #wind6, #humid6 {
+    padding:3px;
+    color:white;
+    text-align:left;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#date2 {
+    color:white;
+}
