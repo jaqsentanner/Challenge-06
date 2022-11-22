@@ -11,10 +11,12 @@ This project has reached its MVP, but still needs some upgraded functionality to
 
 ## View My Work Here ↓
 
+https://jaqsentanner.github.io/Challenge-06/
+
 ## Application Screenshot ↓
 
 ![](./assets/screenshots/main1.PNG)
 
 ## License
 
-This project is unlicensed and intended to be used in a learning envirnoment only. 
+This project is unlicensed and intended to be used in a learning environment only. 
